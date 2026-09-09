@@ -128,31 +128,6 @@ scatterplot()
 
 ```
 
-
-    ---------------------------------------------------------------------------
-
-    NameError                                 Traceback (most recent call last)
-
-    Cell In[1], line 13
-         11     plt.ylabel("Order Value (USD)")
-         12     plt.show()
-    ---> 13 scatterplot()
-
-
-    Cell In[1], line 8, in scatterplot()
-          7 def scatterplot():
-    ----> 8     plt.scatter(df_vbak.index, df_vbak['NETWR'], alpha=0.5, color="royalblue")
-          9     plt.title("Scatterplot of all transactions (Outlier detection)")
-         10     plt.xlabel("Transaction Index")
-
-
-    NameError: name 'df_vbak' is not defined
-
-
-
-    <Figure size 1200x400 with 0 Axes>
-
-
 **Question 4.1: Analyzing the Order Values (Double-click to edit) Look at the scatterplot of the NETWR (Net Value) column. Which statement correctly describes the anomaly we see in the data?**
 - [ ] Most of our orders have exactly the same value, creating a flat line at the bottom. 
 - [ ] There is one extreme outlier which distorts the rest of the data 
