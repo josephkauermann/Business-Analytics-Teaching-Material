@@ -776,7 +776,7 @@ Execute the code cell below to run the K-Means clustering algorithm on our prepa
 - `Potential Customers`
 - `Core Customers`
 
-
+"Hint: If you are unsure how to map them, simply run the code cell as it is! It will generate the summary table and the 3D plot using the generic names (Cluster 0, Cluster 1, etc.). Use the information from the table and the visual clusters in the 3D plot (second next cell) to identify which cluster represents which business segment, and then replace the generic names in the code with the correct labels!"
 
 
 ```python
@@ -804,13 +804,15 @@ training_df['Cluster_ID'] = kmeans.fit_predict(X_seg).astype(str)
 
 # 4. DIDACTICS: Translate math into business value!
 # The mapping depends on the averages. With random_state=42 it remains constant.
-# TASK: Map the clusters to the following categories: Core Customers, New Customers, Potential Customers, Lost Customers
+# TASK: Map the clusters 0-3 to the following categories: Core Customers, New Customers, Potential Customers, Lost Customers.
+# Do this by changing the placeholders (e.g. 'Cluster 0') to the correct customer segment!
 label_mapping = {
-    '0': '___',
-    '1': '___',
-    '2': '___',
-    '3': '___'
+    '0': 'Cluster 0',
+    '1': 'Cluster 1',
+    '2': 'Cluster 2',
+    '3': 'Cluster 3'
 }
+
 training_df['Customer_Segment'] = training_df['Cluster_ID'].map(label_mapping)
 
 # 5. Show Business Insights
@@ -819,8 +821,18 @@ segment_summary['Num_Customers'] = training_df.groupby('Customer_Segment').size(
 print("\nAverage values of the customer segments (The basis for labeling!):")
 display(segment_summary)
 
-# 6. Interactive 3D Visualization
-# We filter out the top 1% outliers just for the plot so the clouds are more visible
+
+```
+
+
+```python
+# ==========================================
+# Interactive 3D Visualization
+# ==========================================
+import plotly.express as px
+from IPython.display import display, HTML
+
+# 6. We filter out the top 1% outliers just for the plot so the clouds are more visible
 plot_df = training_df[training_df['Monetary'] < training_df['Monetary'].quantile(0.99)]
 
 fig = px.scatter_3d(
@@ -834,7 +846,8 @@ fig = px.scatter_3d(
     color_discrete_sequence=px.colors.qualitative.Set1
 )
 fig.update_layout(margin=dict(l=0, r=0, b=0, t=40))
-fig.show()
+
+display(HTML(fig.to_html(full_html=False, include_plotlyjs='cdn')))
 
 ```
 
