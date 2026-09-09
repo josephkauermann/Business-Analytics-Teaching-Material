@@ -69,18 +69,31 @@ Replace the `___()` placeholders in the code cell below with the functions you f
 *For more detailed information, you can visit the official pandas documentation: [pandas.pydata.org](https://pandas.pydata.org/docs/reference/frame.html)*
 
 
+### Exercise 3.1: Loading Cloud Data
+Because we are working in a secure cloud environment, we cannot simply load data from a local hard drive. Instead, we must use the Watsonx API to fetch our data from the Cloud Object Storage. 
+
+1. Click on the **`</>` (Code snippets)** icon in the top right menu bar.
+2. Select **Read data**.
+3. Click on **Select data from project** and choose the **`VBAK_messy.csv`** file.
+4. Under 'Load as', select **pandas DataFrame**.
+5. Click into the empty code cell below, then press the **Insert code to cell** (or **Code in Zelle einfügen**) button in the sidebar.
+6. Change the name of the automatically generated variable (e.g., `df_data_1`) to **`df_vbak`**.
+
+
 
 ```python
-import pandas as pd
+# Select this cell, then click on "Insert code to cell" / "Code in Zelle einfügen" in the sidebar!
+# Don't forget to rename the generated variable (e.g. df_data_1) to df_vbak in the code below:
 
-# Load tables
-df_kna1 = pd.read_csv('KNA1.csv')
-df_knvv = pd.read_csv('KNVV.csv')
-df_vbak = pd.read_csv('VBAK_messy.csv')
-df_vbap = pd.read_csv('VBAP.csv')
+
+
+```
+
+
+```python
 
 # Show the first few rows of VBAK
-# Exercise 3.1: Check the first row's to see the structure of the Data Frame
+# Exercise 3.2: Check the first row's to see the structure of the Data Frame
 df_vbak.___()
 
 
@@ -90,14 +103,14 @@ df_vbak.___()
 
 ```python
 # Overview of data structure and missing values
-# Exercise 3.2: Check the general information about the data frame. what variables can you identify
+# Exercise 3.3: Check the general information about the data frame. what variables can you identify
 df_vbak.___()
 ```
 
 
 ```python
 # Statistical summary of numerical columns
-# Exercise 3.3: What method is best suited to learn about patterns and distributions in the dataset?
+# Exercise 3.4: What method is best suited to learn about patterns and distributions in the dataset?
 df_vbak.___()
 
 ```
@@ -824,6 +837,10 @@ The **Silhouette Score** is an established metric that calculates both cohesion 
 - **-1** indicates that the data points have likely been assigned to the wrong clusters
 
 ![Silhuette Score Examples](silhouette_examples.png)
+
+*Note: If the Silhouette Score example image does not load in your notebook, you can view it directly by returning to your project overview and clicking on the silhouette_examples.png file in the Assets tab.
+
+You can also find the image in the **Companion PDF***
 
 #### Exercise 14: Evaluate the Silhouette Score
 Execute the code cell below to calculate the Silhouette Score of our K-Means model.
