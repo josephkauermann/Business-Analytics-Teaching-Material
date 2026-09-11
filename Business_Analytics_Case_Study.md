@@ -4,9 +4,18 @@ Before starting with the notebook, please complete the mandatory Pre-Test. This 
 
 You can find the Pre-Test here: https://forms.cloud.microsoft/e/wpFZwLNJyZ
 
+### Overview
+This notebook is structured according to CRISP-DM (Cross-Industry Standard Process for Data Mining). It consists of 6 phases: 
+**Business Understanding $\rightarrow$ Data Understanding $\rightarrow$ Data Preparation $\rightarrow$ Modeling $\rightarrow$ Evaluation $\rightarrow$ Deployment**
+
+CRISP-DM provides us with a methodical framework to systematically complete the practical Business Analytics workflow. This ensures that every step in this notebook follows a logical progression.
+
+
 ## 1. Business Understanding
 
 In this section, you will familiarize yourself with the Global Bike Inc. (GBI) model company and the two core use cases: **Customer Lifetime Value (CLV) Prediction** and **Customer Segmentation**.
+*If you want to learn more about these Use Cases you can check out the **Companion PDF***
+
 ### CLV-Prediction:
 A Method with which Business Analysts can make data-driven decisions to predict how much money a customer will spend with the company. 
 
